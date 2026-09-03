@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+    --head: "DM Serif Display", serif;
+    --body: "Plus Jakarta Sans", sans-serif;
+    --yellow: #FF9D00;
+    --black: #0e0e0e;
+    --white: #ffffff;
+    --grey: #dbdbdb;
+}
+
+.navbar {
+    height: 100px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.navbar img {
+    width: 120px;
+}
+
+.navbar-nav li a {
+    font-family: var(--body);
+    font-size: 16px;
+    cursor: var(--white)!important;
+    cursor: pointer!important;
+}
+
+.active {
+    color: var(--yellow)!important;
+    font-weight: 700;
+}
+
+.btn {
+    font-family: var(--body);
+    border: none;
+    border-radius: 50px;
+    background-color: var(--yellow);
+    padding: 12px 32px;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('/img/hero.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    height: 100vh;
+}
+
+.hero h1 {
+    font-family: var(--head);
+    font-weight: 500!important;
+    font-size: 120px!important;
+}
+
+.hero h1 span {
+    color: var(--yellow)!important;
+}
+
+.hero p {
+    font-family: var(--body);
+    font-size: 22px;
+}
+

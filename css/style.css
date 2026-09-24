@@ -7,6 +7,8 @@
     --black: #0e0e0e;
     --white: #ffffff;
     --grey: #dbdbdb;
+    --lightgrey: #dbdbdb;
+    --darkgrey: #4f4f4f;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,6 +85,11 @@ p {
     font-weight: 600;
 }
 
+.btn-primary {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
 .btn-primary:hover {
     background-color: var(--black)!important;
 }
@@ -104,7 +111,7 @@ p {
 }
 
 .quick-item {
-    border: 1px solid var(--yellow);
+    border: 1px solid var(--darkgrey);
     padding: 24px;
     height: 100%;
 }

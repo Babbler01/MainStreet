@@ -45,7 +45,7 @@ p {
     cursor: pointer!important;
 }
 
-.active {
+.nav-link.active {
     color: var(--yellow)!important;
     font-weight: 700;
 }

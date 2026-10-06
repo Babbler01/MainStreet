@@ -6,7 +6,7 @@ header.innerHTML = `
 
             <!-- Brand -->
             <a class="navbar-brand fw-bold" href="index.html">
-                <img src="img/mainstreet.svg" alt="">
+                <img src="img/mainstreet.svg" alt="MainStreet Logo">
             </a>
 
             <!-- Mobile Toggler -->

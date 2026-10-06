@@ -76,6 +76,38 @@ p {
     font-style: italic;
 }
 
+footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 40px 0;
+}
+
+footer img {
+    width: 120px;
+}
+
+.text-body-secondary {
+    color: var(--grey)!important;
+}
+
+footer a {
+    color: var(--grey)!important;
+}
+
+.footer-title {
+    padding-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-family: var(--body);
+}
 
 /* Home Page */
 
@@ -209,6 +241,70 @@ p {
   object-fit: cover;
 }
 
+/* Reviews */
+
+.review-card {
+    padding: 24px;
+}
+
+.review-card:hover {
+    border: 1px solid var(--yellow);
+}
+
+.bi-star-fill {
+    color: var(--yellow);
+}
+
+.review-card h3 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+/* CTA */
+
+.booking-cta {
+    background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('/img/hair treatment.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-label {
+    color: var(--yellow);
+}
+
+.cta-title {
+  font-family: var(--head);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.cta-text {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--white);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.btn-main {
+  background: var(--yellow);
+  color: var(--black);
+  border: 1px solid var(--yellow);
+  padding: 12px 28px;
+  font-weight: 600;
+}
+
+.btn-main:hover {
+  background: transparent;
+  color: var(--yellow);
+}
 
 
 

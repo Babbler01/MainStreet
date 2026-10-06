@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | MainStreet Barbers</title>
+    <link rel="icon" href="img/msfavicon.svg" type="image/svg+xml">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Page Title -->
+    <div class="d-flex page-top">
+        <h1 class="display-1">Our Services</h1>
+    </div>
+    
+
+    <!-- Services -->
+    <div class="container ms-pad ms-services">
+        <div class="row g-4 service-card" id="all-services"></div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    
+    <!-- Services Modal -->
+
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content service-modal">
+
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalServiceTitle"></h2>
+
+                    <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close">
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <img
+                    id="modalServiceImage"
+                    class="img-fluid w-100"
+                    src=""
+                    alt=""
+                    >
+
+                    <p id="modalServiceDescription"></p>
+
+                    <p id="modalServicePrice" class="serv-pricing"></p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <a href="booking.html" class="btn btn-primary w-100">
+                    Book Appointment
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  
+    
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/services.js"></script>
+
+</body>
+</html>

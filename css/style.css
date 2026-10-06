@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&family=Tiro+Bangla:ital@0;1&display=swap');
 
+
+
+/* Global */
+
 :root {
     --head: "Tiro Bangla", serif;
     --body: "Google Sans Flex", sans-serif;
@@ -57,6 +61,23 @@ p {
     background-color: var(--yellow);
     padding: 12px 32px;
 }
+
+.page-top {
+    background: var(--black);
+    padding-top: 100px;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+
+.page-top span {
+    color: var(--yellow)!important;
+    font-style: italic;
+}
+
+
+/* Home Page */
 
 .hero {
     background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url('/img/hero.jpg');
@@ -150,7 +171,7 @@ p {
 }
 
 
-#featured-services .card {
+.service-card .card {
     border-radius: 0!important;
 }
 

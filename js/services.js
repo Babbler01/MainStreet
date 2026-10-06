@@ -21,11 +21,18 @@ async function getServices() {
 }
 
 function displayServices(services) {
-    const servicesContainer = document.getElementById("featured-services");
+  const servicesContainer = document.getElementById("featured-services") ||
+    document.getElementById("all-services");
+
+  if (!servicesContainer) return;
 
     servicesContainer.innerHTML = "";
 
-    services.slice(0, 3).forEach((service) => {
+  const visibleServices = servicesContainer.id === "featured-services"
+    ? services.slice(0, 3)
+    : services;
+
+  visibleServices.forEach((service) => {
 
         const serviceCard = `
             <div class="col-12 col-md-6 col-lg-4">
@@ -51,7 +58,7 @@ function displayServices(services) {
 
 function openServiceModal(serviceId) {
   const service = services.find(
-    (service) => service.id === serviceId
+    (service) => String(service.id) === serviceId
   );
 
   if (!service) return;
@@ -77,17 +84,18 @@ function openServiceModal(serviceId) {
   modal.show();
 }
 
-document
-  .getElementById("featured-services")
-  .addEventListener("click", function (event) {
+document.querySelectorAll("#featured-services, #all-services")
+  .forEach((servicesContainer) => {
+    servicesContainer.addEventListener("click", function (event) {
 
-    const card = event.target.closest(".service-card");
+      const card = event.target.closest(".service-card");
 
-    if (!card) return;
+      if (!card) return;
 
-    const serviceId = card.dataset.serviceId;
+      const serviceId = card.dataset.serviceId;
 
-    openServiceModal(serviceId);
+      openServiceModal(serviceId);
+    });
   });
 
 

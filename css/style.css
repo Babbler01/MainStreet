@@ -68,7 +68,9 @@ p {
     color: var(--white);
     justify-content: center;
     align-items: center;
-    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .page-top span {
@@ -393,7 +395,7 @@ footer a {
 
 /* Contact */
 
-input, textarea {
+input, textarea, select {
     border-radius: 0!important;
     border: 1px solid var(--lightgrey);
     font-size: 16px;
@@ -402,10 +404,101 @@ input, textarea {
 }
 
 
-.form button {
+.form button, form button {
     width: 100%;
 }
 
+
+/* Booking Page */
+.booking-section {
+  background: var(--white);
+}
+
+.booking-form-wrapper {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  background: #fff;
+}
+
+.booking-form-wrapper .form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.booking-form-wrapper .form-control,
+.booking-form-wrapper .form-select {
+  min-height: 50px;
+  border-radius: 8px;
+  border-color: #dedede;
+  padding: 0.75rem 0.9rem;
+}
+
+.booking-form-wrapper textarea.form-control {
+  min-height: auto;
+}
+
+.booking-form-wrapper .form-control:focus,
+.booking-form-wrapper .form-select:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.06);
+}
+
+.booking-info {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: #f7f6f2;
+  border-radius: 0;
+}
+
+.booking-info > h2 {
+  font-family: var(--head);
+  margin-bottom: 1rem;
+}
+
+
+
+.book-item {
+    padding: 0;
+    border: none;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.book-item:hover {
+    border: none;
+    background: transparent;
+}
+
+.booking-contact {
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+#booking-message {
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+#booking-message.alert-success,
+#booking-message.alert-danger {
+  margin-bottom: 0;
+}
+
+#booking-submit:hover {
+    color: var(--white)!important;
+    background-color: var(--black)!important;
+    border: 1px solid var(--black);
+}
+
+@media (max-width: 575.98px) {
+  .booking-form-wrapper,
+  .booking-info {
+    border-radius: 14px;
+  }
+}
 
 
 

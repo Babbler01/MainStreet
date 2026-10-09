@@ -25,8 +25,172 @@
     <!-- Page Title -->
     <div class="d-flex page-top">
         <h1 class="display-1">Book an Appointment</h1>
+        <p>Choose your service, select a convenient time, and leave the rest to us.</p>
     </div>
     
+
+    <!-- Booking Section -->
+    <div class="booking-section py-5">
+        <div class="container ms-pad">
+            <div class="row g-5 align-items-start">
+
+            <!-- Booking Form -->
+            <div class="col-12 col-lg-7">
+                <div class="booking-form-wrapper">
+                <div class="mb-4">
+                    <p class="section-label">MAKE IT OFFICIAL</p>
+                    <h2 class="display-3">Reserve Your Seat.</h2>
+                    <p>Complete the details below to request your appointment.</p>
+                </div>
+
+                <form id="booking-form">
+                    <div class="row g-3">
+
+                    <div class="col-12 col-md-6">
+                        <label for="firstName" class="form-label">First name *</label>
+                        <input type="text" class="form-control" id="firstName"
+                        name="firstName" autocomplete="given-name" required>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="lastName" class="form-label">Last name *</label>
+                        <input type="text" class="form-control" id="lastName"
+                        name="lastName" autocomplete="family-name" required>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="contactNumber" class="form-label">Phone number *</label>
+                        <input type="tel" class="form-control" id="contactNumber"
+                        name="contactNumber" autocomplete="tel"
+                        placeholder="08012345678" required>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="email" class="form-label">Email address *</label>
+                        <input type="email" class="form-control" id="email"
+                        name="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="serviceCategory" class="form-label">Service category *</label>
+                        <select class="form-select" id="serviceCategory"
+                        name="serviceCategory" required>
+                        <option value="">Loading categories...</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="serviceType" class="form-label">Choose your service *</label>
+                        <select class="form-select" id="serviceType"
+                        name="serviceType" required>
+                        <option value="">Choose a category first</option>
+                        </select>
+                        <div id="selected-service-price" class="form-text"></div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="appointmentDate" class="form-label">Appointment date *</label>
+                        <input type="date" class="form-control" id="appointmentDate"
+                        name="appointmentDate" required>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="appointmentTime" class="form-label">Appointment time *</label>
+                        <select class="form-select" id="appointmentTime"
+                        name="appointmentTime" required>
+                        <option value="">Select a time</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="12:00">12:00 PM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="additionalNotes" class="form-label">
+                        Additional notes <span class="text-muted">(optional)</span>
+                        </label>
+                        <textarea class="form-control" id="additionalNotes"
+                        name="additionalNotes" rows="4"
+                        placeholder="Tell us about your preferred style or anything we should know."></textarea>
+                    </div>
+
+                    <div class="col-12">
+                        <div id="booking-message" class="d-none" role="status"
+                        aria-live="polite"></div>
+                    </div>
+
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-main"
+                        id="booking-submit">
+                        Request Appointment
+                        </button>
+                        <p class="small text-muted mt-3 mb-0">
+                        Fields marked * are required. Your appointment request
+                        must be confirmed by MainStreet.
+                        </p>
+                    </div>
+
+                    </div>
+                </form>
+                </div>
+            </div>
+
+
+            <!-- Booking Information -->
+            <div class="col-12 col-lg-5">
+                <aside class="booking-info">
+                <p class="section-label">THE MAINSTREET EXPERIENCE</p>
+                <h2 class="display-5">Good Grooming. No Guesswork.</h2>
+                <p>
+                    From a clean fade to a complete grooming package, we're here
+                    to help you look sharp and feel confident.
+                </p>
+
+                <div class="value-item about-feature book-item">
+                    <i class="bi bi-scissors"></i>
+                    <div>
+                    <h3>Choose Your Service</h3>
+                    <p>Explore our grooming services and prices before booking.</p>
+                    </div>
+                </div>
+
+                <div class="value-item about-feature book-item">
+                    <i class="bi bi-calendar-check"></i>
+                    <div>
+                    <h3>Pick Your Time</h3>
+                    <p>Choose a date and preferred time for your visit.</p>
+                    </div>
+                </div>
+
+                <div class="value-item about-feature book-item">
+                    <i class="bi bi-chat-dots"></i>
+                    <div>
+                    <h3>We'll Follow Up</h3>
+                    <p>We'll need to confirm your appointment request with you.</p>
+                    </div>
+                </div>
+
+                <div class="booking-contact mt-4">
+                    <h3>Need help booking?</h3>
+                    <p>Contact us if you have questions about a service or your appointment.</p>
+                    <a href="contact.html" class="btn btn-outline-dark">
+                    Contact MainStreet
+                    </a>
+                </div>
+                </aside>
+            </div>
+
+            </div>
+        </div>
+    </div>
 
     
     <!-- Footer -->
@@ -38,6 +202,7 @@
     <script src="js/header.js"></script>
     <script src="js/app.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/booking.js"></script>
 
 </body>
 </html>

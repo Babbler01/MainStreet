@@ -110,6 +110,14 @@ footer.innerHTML = `
             </p>
           </div>
 
+          <div class="col-12 col-md-6">
+            <p class="mb-0">
+              <a href="admin/appointments.html" class="text-decoration-none">Admin Appointments</a>
+            </p>
+          </div>
+
+          
+
           <div class="col-12 col-md-6 text-md-end">
             <p class="mb-0 text-md-end">
                 Quality grooming. Exceptional experience.

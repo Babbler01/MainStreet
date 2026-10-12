@@ -82,9 +82,11 @@ function clearPageMessage() {
 function getService(appointment) {
   const serviceId = idOf(appointment.serviceType);
 
-  return services.find((service) =>
-    idOf(service) === serviceId
-  );
+  if (!serviceId) return null;
+
+  return services.find(
+    (service) => idOf(service) === serviceId
+  ) || null;
 }
 
 function formatDateTime(value) {
@@ -233,7 +235,7 @@ async function loadAppointments() {
   try {
     const [appointmentData, serviceData] = await Promise.all([
       apiRequest("/appointments?limit=100&page=1"),
-      fetch(`${API_URL}/services?limit=100`).then(async (response) => {
+      fetch(`${API_URL}/services`).then(async (response) => {
         if (!response.ok) throw new Error("Unable to load services.");
         return response.json();
       }),
@@ -241,6 +243,23 @@ async function loadAppointments() {
 
     appointments = appointmentData.results || [];
     services = serviceData.results || [];
+
+    console.log("Appointments:", appointments);
+    console.log("Services:", services);
+
+    console.log(
+      "First appointment serviceType:",
+      appointments[0]?.serviceType
+    );
+
+    console.log(
+      "Available service IDs:",
+      services.map((service) => ({
+        id: service.id,
+        _id: service._id,
+        title: service.title,
+      }))
+    );
 
     updateSummary();
     renderAppointments();

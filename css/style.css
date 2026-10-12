@@ -13,6 +13,11 @@
     --grey: #dbdbdb;
     --lightgrey: #dbdbdb;
     --darkgrey: #4f4f4f;
+    --admin-black: #191919;
+    --admin-yellow: #d9b64c;
+    --admin-bg: #f5f5f2;
+    --admin-border: #e5e5e1;
+    --admin-muted: #777;
 }
 
 h1, h2, h3, h4, h5, h6 {

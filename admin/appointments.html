@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | MainStreet Admin</title>
+    <link rel="icon" href="img/msfavicon.svg" type="image/svg+xml">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="appointments.css">
+</head>
+
+<body>
+  <div class="admin-layout">
+
+    <aside class="sidebar">
+      <a href="../index.html" class="brand">
+        <i class="bi bi-scissors"></i>
+        MAINSTREET
+      </a>
+
+      <p class="sidebar-label">MANAGEMENT</p>
+
+      <a href="appointments.html" class="sidebar-link active">
+        <i class="bi bi-calendar2-check"></i>
+        Appointments
+      </a>
+
+      <a href="../index.html" class="sidebar-link">
+        <i class="bi bi-globe"></i>
+        View Website
+      </a>
+
+      <div class="sidebar-bottom">
+        <span class="admin-indicator"></span>
+        <span id="connection-label">Not connected</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+
+      <header class="topbar">
+        <div>
+          <p class="eyebrow mb-1">MAINSTREET / MANAGEMENT</p>
+          <h1>Appointments</h1>
+          <p class="text-muted mb-0">
+            View and manage customer booking requests.
+          </p>
+        </div>
+
+        <button class="btn btn-outline-dark" id="refresh-btn" disabled>
+          <i class="bi bi-arrow-clockwise"></i>
+          Refresh
+        </button>
+      </header>
+
+      <!-- Admin access -->
+      <section class="access-panel" id="access-panel">
+        <div class="access-icon">
+          <i class="bi bi-shield-lock"></i>
+        </div>
+
+        <div class="flex-grow-1">
+          <h2>Admin access</h2>
+          <p>
+            Enter your administrator key to securely load appointment records.
+          </p>
+
+          <form id="access-form">
+            <label for="admin-key" class="form-label">Administrator key</label>
+
+            <div class="input-group">
+              <input
+                type="password"
+                class="form-control"
+                id="admin-key"
+                autocomplete="current-password"
+                required
+                placeholder="Enter your admin key"
+              >
+              <button class="btn btn-dark" type="submit" id="connect-btn">
+                Connect
+              </button>
+            </div>
+          </form>
+
+          <div id="access-message" class="small mt-2" role="status"></div>
+        </div>
+      </section>
+
+      <!-- Dashboard -->
+      <section id="dashboard" hidden>
+
+        <div id="page-message" class="alert d-none" role="status"></div>
+
+        <div class="summary-grid">
+          <article class="summary-card">
+            <div class="summary-icon"><i class="bi bi-calendar3"></i></div>
+            <p>Total appointments</p>
+            <h2 id="total-count">0</h2>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-icon"><i class="bi bi-clock-history"></i></div>
+            <p>Upcoming</p>
+            <h2 id="upcoming-count">0</h2>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-icon"><i class="bi bi-check-circle"></i></div>
+            <p>Past</p>
+            <h2 id="past-count">0</h2>
+          </article>
+
+          <article class="summary-card">
+            <div class="summary-icon"><i class="bi bi-calendar-x"></i></div>
+            <p>Cancelled</p>
+            <h2 id="cancelled-count">0</h2>
+          </article>
+        </div>
+
+        <section class="appointments-panel">
+          <div class="panel-heading">
+            <div>
+              <h2>Booking records</h2>
+              <p class="text-muted mb-0">
+                Search, filter, inspect and update appointments.
+              </p>
+            </div>
+
+            <button class="btn btn-outline-secondary btn-sm" id="logout-btn">
+              <i class="bi bi-box-arrow-right"></i>
+              Disconnect
+            </button>
+          </div>
+
+          <div class="filters">
+            <div class="filter-search">
+              <i class="bi bi-search"></i>
+              <input
+                type="search"
+                id="search-input"
+                class="form-control"
+                placeholder="Search name, email, phone or service"
+              >
+            </div>
+
+            <select id="status-filter" class="form-select">
+              <option value="">All statuses</option>
+              <option value="Upcoming">Upcoming</option>
+              <option value="Past">Past</option>
+              <option value="Cancelled">Cancelled</option>
+            </select>
+
+            <input type="date" id="date-filter" class="form-control"
+              aria-label="Filter by appointment date">
+
+            <button class="btn btn-light" id="clear-filters">
+              Clear
+            </button>
+          </div>
+
+          <div id="table-loading" class="empty-state" hidden>
+            <div class="spinner-border spinner-border-sm" role="status"></div>
+            Loading appointments...
+          </div>
+
+          <div id="empty-state" class="empty-state" hidden>
+            <i class="bi bi-calendar2-week"></i>
+            <h3>No appointments found</h3>
+            <p>Try changing your filters or refresh the list.</p>
+          </div>
+
+          <div class="table-responsive" id="table-wrapper">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Service</th>
+                  <th>Date &amp; time</th>
+                  <th>Contact</th>
+                  <th>Status</th>
+                  <th>Manage</th>
+                </tr>
+              </thead>
+              <tbody id="appointments-body"></tbody>
+            </table>
+          </div>
+
+          <div class="panel-footer">
+            <span id="results-count">0 appointments</span>
+            <span>Data provided by MainStreet API</span>
+          </div>
+        </section>
+      </section>
+
+      <footer class="admin-footer">
+        MainStreet Admin · Appointment Management
+      </footer>
+    </main>
+  </div>
+
+  <!-- Appointment details modal -->
+  <div class="modal fade" id="appointment-modal" tabindex="-1"
+    aria-labelledby="modal-title" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="modal-title">
+            Appointment details
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body" id="appointment-details"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="appointments.js"></script>
+</body>
+</html>
